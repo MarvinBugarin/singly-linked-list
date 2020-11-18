@@ -176,6 +176,12 @@ private:
       AddBack(where->Element());
     }
   }
+   T Difference() {
+                if (head == NULL)
+                        throw std::logic_error("List is empty");
+
+                return SLList(head);
+        }
 
 };
 
