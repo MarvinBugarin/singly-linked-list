@@ -23,6 +23,18 @@ private:
 
 template <typename T>
 class SLList {
+    T recursiveDiff(SLNode<T> *listNode) {
+       if (listNode -> next == NULL)
+      {
+          return -listNode -> data;
+      }
+       if (listNode == head)
+       {
+           return listNode -> data + recursiveDiff(listNode -> next);
+         return -listNode -> data + recursiveDiff(listNode -> next);
+
+       }
+        }
 public:
   SLList()
   : head_(nullptr), tail_(nullptr), size_(0) {}
@@ -32,6 +44,7 @@ public:
   SLList& operator=(const SLList& other) { CopyFrom(other); }
 
   ~SLList() { Clear(); }
+
 
   void Clear() {
     while (size_ > 0) {
